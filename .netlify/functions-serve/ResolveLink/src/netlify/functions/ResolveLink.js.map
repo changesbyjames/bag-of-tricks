@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../Users/james/Documents/blog/netlify/functions/ResolveLink.ts"],
+  "sourceRoot": "/var/folders/l0/p96k4g4910n2kf16jv7y3ljr0000gn/T/tmp-83183-8imCShVXSET1",
+  "sourcesContent": ["import { Handler } from \"@netlify/functions\";\n\nconst handler: Handler = async (event, context) => {\n  console.log(event);\n\n  return {\n    statusCode: 200,\n    body: JSON.stringify({ message: 'Hello World' }),\n  };\n};\n\nexport { handler };"],
+  "mappings": ";;;;;;;;;AAAA;AAAA;AAAA;AAEA,IAAM,UAAmB,OAAO,OAAO,YAAY;AACjD,UAAQ,IAAI;AAEZ,SAAO;AAAA,IACL,YAAY;AAAA,IACZ,MAAM,KAAK,UAAU,EAAE,SAAS;AAAA;AAAA;",
+  "names": []
+}
