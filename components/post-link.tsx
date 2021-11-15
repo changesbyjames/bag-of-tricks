@@ -6,6 +6,13 @@ type Props = {
   link: string
 }
 
+const getUrl = (url: string, link: string) => {
+  if (url.includes('http')) {
+    return url
+  }
+  return `${link}${url}`
+}
+
 const PostLink = ({ link }: Props) => {
   
   const [info, setInfo] = useState<{ ogTitle: string, ogDescription: string, ogImage: { url: string }, ogUrl: string }>();
@@ -20,7 +27,7 @@ const PostLink = ({ link }: Props) => {
 
   return <div className="mx-auto max-w-2xl my-8 rounded-md border overflow-hidden">
     <a href={`https://${link}`} target="_blank" rel="noreferrer">
-      <div style={{aspectRatio: '16 / 9', backgroundImage: info ? `url("${info.ogImage.url}")` : undefined }} className="w-full bg-cover bg-center bg-gray-50" />
+      <div style={{aspectRatio: '16 / 9', backgroundImage: info ? `url("${getUrl(info.ogImage.url, info.ogUrl)}")` : undefined }} className="w-full bg-cover bg-center bg-gray-50" />
       <div className="m-4">
         <h3 className="text-xl font-medium">{ info ? info.ogTitle : <Skeleton height={26} /> }</h3>
         <p>{ info ? info.ogDescription : <Skeleton count={3} /> }</p>
