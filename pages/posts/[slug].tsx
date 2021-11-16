@@ -42,7 +42,7 @@ const Post = ({ post, preview }: Props) => {
                 title={post.title}
                 date={post.date}
               />
-              { post.link.includes('twitter') ? <PostTweet link={post.link}/> : <PostLink link={post.link} />
+              { post.link.includes('twitter') ? <PostTweet link={post.link}/> : <PostLink link={post.link} /> }
               <PostBody content={post.content} />
             </article>
           </>
