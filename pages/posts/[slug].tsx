@@ -11,6 +11,7 @@ import Head from 'next/head'
 import markdownToHtml from '../../lib/markdownToHtml'
 import PostType from '../../types/post'
 import PostLink from '../../components/post-link'
+import PostTweet from '../../components/post-tweet'
 
 type Props = {
   post: PostType
@@ -41,7 +42,7 @@ const Post = ({ post, preview }: Props) => {
                 title={post.title}
                 date={post.date}
               />
-              <PostLink link={post.link} />
+              { post.link.includes('twitter') ? <PostTweet link={post.link}/> : <PostLink link={post.link} />
               <PostBody content={post.content} />
             </article>
           </>
