@@ -10,16 +10,18 @@ const PostTweet = ({ link }: Props) => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch(`https://publish.twitter.com/oembed?url=https://${link}`);
+        const response = await fetch(`/.netlify/builders/resolve-tweet/${link}`);
 				const meta = await response.json()
         setTweet(meta.html);
+        // @ts-ignore
+        twttr.widgets.load()
       } catch (e) {}
     })()
   }, [link])
 
   return tweet ? <div
 	  dangerouslySetInnerHTML={{ __html: tweet }} 
-		className="mx-auto max-w-2xl my-8 rounded-md border overflow-hidden">
+		className="mx-auto flex justify-center max-w-2xl my-8 overflow-hidden">
   </div> : null
 }
 
