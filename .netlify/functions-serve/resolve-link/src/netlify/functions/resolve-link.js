@@ -36303,14 +36303,24 @@ var import_open_graph_scraper = __toModule(require_open_graph_scraper());
 var import_functions = __toModule(require_main());
 var OGHandler = async (event, context) => {
   const url = `https://${event.path.replace("/.netlify/builders/resolve-link/", "")}`;
-  const body = await (0, import_open_graph_scraper.default)({ url });
-  return {
-    statusCode: 200,
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(body.result)
-  };
+  try {
+    const body = await (0, import_open_graph_scraper.default)({ url });
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body.result)
+    };
+  } catch (e) {
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({})
+    };
+  }
 };
 var handler = (0, import_functions.builder)(OGHandler);
 // Annotate the CommonJS export names for ESM import in node:

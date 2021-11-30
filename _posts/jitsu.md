@@ -1,8 +1,8 @@
 ---
 title: 'Jitsu: Data ingest & transform'
 excerpt: 'Jitsu is in the business of moving, ingesting & storing data while handles errors, retrying, different schedules, different sources, different databases, multi-tenancy.'
-link: 'jitsu.com'
-date: '2021-11-18T05:35:07.322Z'
+article:
+  link: 'jitsu.com'
 ---
 
 I _hate_ writing things from scratch but I even look at the problem of “putting simple events into a database” with that twinge of “I can probably do that in a couple days”.

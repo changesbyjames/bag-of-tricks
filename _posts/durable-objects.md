@@ -1,8 +1,7 @@
 ---
-title: 'Cloudflare durable object: The way APIs should be'
-excerpt: 'ABC'
-link: 'blog.cloudflare.com/durable-objects-ga/'
-date: '2021-11-09T05:35:07.322Z'
+title: 'Cloudflare durable objects: Rock solid infrastructure, amazing DX'
+excerpt: ''
+article:
+  link: 'blog.cloudflare.com/durable-objects-ga/'
+  title: 'Durable Objects — now Generally Available'
 ---
-
-ABC
